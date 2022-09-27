@@ -12,7 +12,7 @@ class IOChannel { public:
 	uint64_t counter = 0;
 	void send_data(const void * data, size_t nbyte) {
 		counter +=nbyte;
-		std::cout << "counter " << counter << std::endl;
+		//std::cout << "counter " << counter << std::endl;
 		derived().send_data_internal(data, nbyte);
 	}
 
