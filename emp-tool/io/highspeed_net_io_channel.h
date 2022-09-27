@@ -151,7 +151,7 @@ class HighSpeedNetIO : public IOChannel<HighSpeedNetIO> { public:
 		set_delay_opt(recv_sock, true);
 		schannel = new SenderSubChannel(send_sock);
 		rchannel = new RecverSubChannel(recv_sock);
-		if (not quiet) std::cout << "connected\n";
+		if (not quiet) std::cout << "hs connected using our code\n";
 	}
 
 	int server_listen(int port) {

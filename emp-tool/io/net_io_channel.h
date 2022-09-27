@@ -83,7 +83,7 @@ class NetIO: public IOChannel<NetIO> { public:
 		memset(buffer, 0, NETWORK_BUFFER_SIZE);
 		setvbuf(stream, buffer, _IOFBF, NETWORK_BUFFER_SIZE);
 		if(!quiet)
-			std::cout << "connected\n";
+			std::cout << "connected using our code\n";
 	}
 
 	void sync() {
