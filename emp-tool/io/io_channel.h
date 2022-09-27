@@ -4,15 +4,20 @@
 #include "emp-tool/utils/prg.h"
 #include "emp-tool/utils/group.h"
 #include <memory>
-#include <cassert>  
+#include <cassert>
 
 namespace emp {
-template<typename T> 
+template<typename T>
 class IOChannel { public:
 	uint64_t counter = 0;
 	void send_data(const void * data, size_t nbyte) {
 		counter +=nbyte;
+		std::cout << "counter " << counter << std::endl;
 		derived().send_data_internal(data, nbyte);
+	}
+
+	void print_counter() {
+		std::cout << "counter" << counter << std::endl;
 	}
 
 	void recv_data(void * data, size_t nbyte) {
@@ -48,7 +53,7 @@ class IOChannel { public:
 			recv_data(tmp, len);
 			A[i].from_bin(g, tmp, len);
 		}
-	}	
+	}
 
 	void send_bool(bool * data, size_t length) {
 		void * ptr = (void *)data;
