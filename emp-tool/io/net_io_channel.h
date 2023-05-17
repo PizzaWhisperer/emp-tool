@@ -104,6 +104,10 @@ class NetIO: public IOChannel<NetIO> { public:
 		delete[] buffer;
 	}
 
+	void print_counter() {
+		std::cout << "Transfer cost: " << counter << std::endl;
+	}
+
 	void set_nodelay() {
 		const int one=1;
 		setsockopt(consocket,IPPROTO_TCP,TCP_NODELAY,&one,sizeof(one));
