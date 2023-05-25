@@ -105,7 +105,7 @@ class NetIO: public IOChannel<NetIO> { public:
 	}
 
 	void print_counter() {
-		std::cout << "Transfer cost: " << counter << std::endl;
+		std::cout << "Transfer cost (bytes): " << counter << std::endl;
 	}
 
 	void set_nodelay() {
